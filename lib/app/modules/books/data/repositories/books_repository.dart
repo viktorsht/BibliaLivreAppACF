@@ -15,8 +15,8 @@ class BooksRepository implements IBooksRepository{
     try {
       final list = await bookDatasource.getBooks();
       return list.map((json) => BookModel.fromJson(json)).toList();
-    } on IHolyBibleException catch (e) {
-      throw ErrorListBooks(null, message: e.toString());
+    } on IHolyBibleException catch (s,e) {
+      throw ErrorListBooks(s.stackTrace, message: e.toString());
     }
   }
 }
