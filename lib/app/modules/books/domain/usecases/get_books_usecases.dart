@@ -7,7 +7,7 @@ abstract class IGetBooks{
 }
 
 class GetBooks implements IGetBooks{
-  final IBooksRepositorry repository;
+  final IBooksRepository repository;
   GetBooks(this.repository);
 
   @override

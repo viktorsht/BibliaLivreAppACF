@@ -24,6 +24,7 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^2.0.0
   mockito: ^5.4.2
+  mocktail: ^1.0.1
 
 flutter:
 

@@ -1,8 +1,9 @@
 class BooksEntities{
-  final String id;
+  final int id;
   final String name;
   final String abb;
   final int chapters;
 
-  BooksEntities(this.id, this.name, this.abb, this.chapters);
+  BooksEntities({required this.id, required this.name, required this.abb, required this.chapters});
+
 }
