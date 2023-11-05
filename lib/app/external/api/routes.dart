@@ -1,7 +1,7 @@
 class Api {
   static String urlApi = 'https://localhost:8080/';
 }
-class RoutersApi{
+class RoutesApi{
   
   static String books = '${Api.urlApi}books';
 

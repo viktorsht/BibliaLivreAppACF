@@ -6,6 +6,5 @@ abstract class IHolyBibleException{
 }
 
 class ErrorListBooks extends IHolyBibleException{
-  ErrorListBooks(super.stackTrace, {required super.message});
-  
+  ErrorListBooks(super.stackTrace, {required super.message}); 
 }
