@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:holy_bible/app/external/clients/client.dart';
-import 'package:holy_bible/app/modules/books/models/books_model.dart';
+import 'package:holy_bible/app/models/books_model.dart';
 
 class BookRepository{
   final IClient service;

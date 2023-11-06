@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:holy_bible/app/modules/books/bloc/bloc_books.dart';
 import 'package:holy_bible/app/modules/books/repositories/book_repository.dart';
+import 'package:holy_bible/app/modules/chapters/bloc/bloc_chapter.dart';
+import 'package:holy_bible/app/modules/chapters/repositories/chapters_repository.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:provider/provider.dart';
 
@@ -15,6 +17,7 @@ void main() {
       MultiProvider(
         providers: [
           BlocProvider<BlocBooks>(create: (context) => BlocBooks(Modular.get<BookRepository>())),
+          BlocProvider<BlocChapter>(create: (context) => BlocChapter(Modular.get<ChapterRepository>())),
         ],
         child: ModularApp(
           module: AppModule(), 

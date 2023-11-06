@@ -29,7 +29,10 @@ class ListChapters extends StatelessWidget {
           itemCount: book.chapters, 
           itemBuilder: (context, index){
             return GestureDetector(
-              onTap: () => Modular.to.navigate(RoutesApp.showChapters),
+              onTap: () => Modular.to.pushNamed(RoutesApp.showChapters, arguments: {
+                'book' : (book.id! - 1).toString(),
+                'chapter' : (index+1).toString(),
+              }),
               child: Container(
                 width: 80,
                 height: 80,

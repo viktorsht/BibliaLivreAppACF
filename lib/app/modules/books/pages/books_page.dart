@@ -38,10 +38,7 @@ class _BooksPageState extends State<BooksPage> {
           BlocBuilder<BlocBooks, BlocState>(
             bloc: blocBooks,
             builder: (context, state) {
-              /*if(state is SearchBooksLoadingState || state is SearchBooksInitial){
-                return const Center(child: CircularProgressIndicator(),);
-              }
-              else*/ if(state is SearchBooksErrorState){
+              if(state is SearchBooksErrorState){
                 return Center(child: Text(state.message),);
               }
               else if(state is SearchBooksSucessState){

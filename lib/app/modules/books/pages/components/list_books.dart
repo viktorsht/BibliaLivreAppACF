@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:holy_bible/app/constants/buttons.dart';
-import 'package:holy_bible/app/modules/books/models/books_model.dart';
+import 'package:holy_bible/app/models/books_model.dart';
 import 'package:holy_bible/app/routes/routes_app.dart';
 
 import '../../../../constants/colors_app.dart';

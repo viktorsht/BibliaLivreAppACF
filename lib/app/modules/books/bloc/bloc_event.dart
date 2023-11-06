@@ -3,5 +3,4 @@ part of 'bloc_books.dart';
 @immutable
 sealed class BlocEvent {}
 
-class SearchListBooksEvent extends BlocEvent{
-}
+class SearchListBooksEvent extends BlocEvent{}

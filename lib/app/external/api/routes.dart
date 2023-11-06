@@ -4,5 +4,6 @@ class Api {
 class RoutesApi{
   
   static String books = '${Api.urlApi}books';
+  static String showChapter = '${Api.urlApi}verses/';
 
 }
