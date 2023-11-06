@@ -1,5 +1,5 @@
 class RoutesApp {
   static const String root = '/';
-  static const String listBooks = '/settings';
-  static const String listChapters = '/profile';
+  static const String showChapters = '/showChapters/';
+  static const String listChapters = '/listChapters/';
 }

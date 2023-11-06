@@ -1,5 +1,5 @@
 class Api {
-  static String urlApi = 'https://localhost:8080/';
+  static String urlApi = 'http://10.0.0.24:8080/';
 }
 class RoutesApi{
   

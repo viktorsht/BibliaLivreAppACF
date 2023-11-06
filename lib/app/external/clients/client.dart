@@ -1,3 +1,3 @@
-abstract class Client{
-  get(String url, Map<String, String> headers);
+abstract class IClient{
+  Future<dynamic> get(String url, Map<String, String> headers);
 }

@@ -6,7 +6,7 @@ class HeadersApi extends Headers {
   static Map<String, String> getHeaders() {
     return {
       'Accept': 'application/json',
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json;charset=UTF-8',
     };
   }
 

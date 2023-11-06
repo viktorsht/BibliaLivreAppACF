@@ -2,7 +2,7 @@ import 'package:http/http.dart' as http;
 
 import '../client.dart';
 
-class HttpService implements Client{
+class HttpService implements IClient{
 
   final http.Client client;
 

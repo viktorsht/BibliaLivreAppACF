@@ -19,6 +19,7 @@ class BlocBooks extends Bloc<BlocEvent, BlocState> {
   void _mapEventToState(SearchListBooksEvent event, Emitter<BlocState> emit) async {
     emit(SearchBooksLoadingState());
     try{
+      //print(HeadersApi.getHeaders());
       final response = await bookRepository.fetchData(RoutesApi.books, HeadersApi.getHeaders());
       emit(SearchBooksSucessState(data: response));
     }
