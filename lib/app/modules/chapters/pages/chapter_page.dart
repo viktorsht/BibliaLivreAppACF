@@ -30,7 +30,7 @@ class _ChapterPageState extends State<ChapterPage> {
     return Scaffold(
       appBar: CustomAppBar(
         title: '${widget.book} Cap ${widget.chapter}',
-        onBackPressed: () => Modular.to.navigate(RoutesApp.root),
+        onBackPressed: () => Modular.to.navigate(RoutesApp.listBooks),
       ),
       body: BlocBuilder(
         bloc: blocChapter,

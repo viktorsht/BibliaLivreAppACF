@@ -1,4 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:holy_bible/app/components/no_internet.dart';
 import 'package:holy_bible/app/external/clients/http/client_http.dart';
 import 'package:holy_bible/app/modules/books/pages/books_page.dart';
 import 'package:holy_bible/app/modules/books/pages/components/list_chapters.dart';
@@ -26,6 +27,7 @@ class AppModule extends Module {
     r.child(RoutesApp.root, child: (context) => const SplashPage());
     r.child(RoutesApp.listBooks, child: (context) => const BooksPage());
     r.child(RoutesApp.listChapters, child: (context) => ListChapters(book: r.args.data));
+    r.child(RoutesApp.noInternet, child: (context) => const NoInternetPage());
     r.module(RoutesApp.showChapters, module: ChaptersModule());
   }
 }
