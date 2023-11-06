@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:holy_bible/app/modules/chapters/pages/components/show_verse.dart';
+import 'package:holy_bible/app/routes/routes_app.dart';
 
 import '../../../components/app_bar_component.dart';
 import '../bloc/bloc_chapter.dart';
 
 class ChapterPage extends StatefulWidget {
   final String book;
+  final String numBook;
   final String chapter;
-  const ChapterPage({super.key, required this.book, required this.chapter});
+  const ChapterPage({super.key, required this.book, required this.chapter, required this.numBook});
 
   @override
   State<ChapterPage> createState() => _ChapterPageState();
@@ -21,13 +23,14 @@ class _ChapterPageState extends State<ChapterPage> {
   @override
   void initState() {
     super.initState();
-    blocChapter.add(ShowChapterEvent(book: widget.book, chapter: widget.chapter));
+    blocChapter.add(ShowChapterEvent(book: widget.numBook, chapter: widget.chapter));
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(
-        title:'Biblia Sagrada AFC Livre' ,
+      appBar: CustomAppBar(
+        title: '${widget.book} Cap ${widget.chapter}',
+        onBackPressed: () => Modular.to.navigate(RoutesApp.root),
       ),
       body: BlocBuilder(
         bloc: blocChapter,
@@ -45,11 +48,9 @@ class _ChapterPageState extends State<ChapterPage> {
                     numVerse: state.data.verse![index].verse!.toString(),
                     text: state.data.verse![index].text!
                   );
-                  //return ListTile(title: Text(state.data.verse![0].text!),);
                 }
               ),
             );
-            //return Text('${state.data.verse!.length} - ${widget.book} - ${widget.chapter}');
           }
           return const Center(child: CircularProgressIndicator(),);
         }

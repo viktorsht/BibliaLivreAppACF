@@ -24,7 +24,7 @@ class ShowVerse extends StatelessWidget {
           child: Text(
             text,
             style: const TextStyle(
-              fontSize: 16,
+              fontSize: 20,
               fontWeight: FontWeight.normal,
             ),
           ),
