@@ -50,9 +50,7 @@ class _BooksPageState extends State<BooksPage> {
                   )
                 );
               }
-              //print(state);
               return const LoadinComponent();
-              //return Container();
             },
           ),
         ],

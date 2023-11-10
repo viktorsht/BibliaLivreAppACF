@@ -22,7 +22,6 @@ class ChaptersModule extends Module {
   void routes(r) {
     r.child(RoutesApp.root, child: (context) => ChapterPage(
       book: r.args.data['book'], 
-      numBook: r.args.data['numBook'], 
       chapter: r.args.data['chapter'],
     ));
   }

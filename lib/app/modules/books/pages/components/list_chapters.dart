@@ -15,7 +15,7 @@ class ListChapters extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
         title: book.name!,
-        onBackPressed: () => Modular.to.navigate(RoutesApp.root),
+        //onBackPressed: () => Modular.to.navigate(RoutesApp.root),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -29,15 +29,17 @@ class ListChapters extends StatelessWidget {
           itemCount: book.chapters, 
           itemBuilder: (context, index){
             return GestureDetector(
-              onTap: () => Modular.to.navigate(RoutesApp.showChapters, arguments: {
-                'numBook' : (book.id! - 1).toString(),
-                'book' : book.name,
+              onTap: () => Modular.to.pushNamed(RoutesApp.showChapters, arguments: {
+                'book' : book,
                 'chapter' : (index+1).toString(),
               }),
               child: Container(
                 width: 80,
                 height: 80,
-                color: ColorsApp.buttonColor,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.0), // Define o raio de borda arredondada
+                  color: ColorsApp.buttonColor
+                ),
                 child: Center(
                   child: Text(
                     "${index+1}",
