@@ -40,7 +40,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               IconButton(
                 onPressed: onSettingsPressed,
                 icon: Icon(
-                  Icons.settings,
+                  Icons.search,
                   color: ColorsApp.lightColorText,
                 ),
               ),

@@ -5,6 +5,7 @@ import 'package:holy_bible/app/modules/books/bloc/bloc_books.dart';
 import 'package:holy_bible/app/modules/books/repositories/book_repository.dart';
 import 'package:holy_bible/app/modules/chapters/bloc/bloc_chapter.dart';
 import 'package:holy_bible/app/modules/chapters/repositories/chapters_repository.dart';
+import 'package:holy_bible/app/modules/search_books/bloc/bloc_search_book.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:provider/provider.dart';
 
@@ -18,6 +19,7 @@ void main() {
         providers: [
           BlocProvider<BlocBooks>(create: (context) => BlocBooks(Modular.get<BookRepository>())),
           BlocProvider<BlocChapter>(create: (context) => BlocChapter(Modular.get<ChapterRepository>())),
+          BlocProvider<BlocSearchBook>(create: (context) => BlocSearchBook()),
         ],
         child: ModularApp(
           module: AppModule(), 

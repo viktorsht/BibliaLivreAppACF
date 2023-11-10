@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:holy_bible/app/constants/colors_app.dart';
+import 'package:holy_bible/app/components/widgets/app_bar_component.dart';
 import 'package:holy_bible/app/modules/books/bloc/bloc_books.dart';
 
 import '../../../components/widgets/erro_component.dart';
@@ -29,10 +29,8 @@ class _BooksPageState extends State<BooksPage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Biblia Sagrada ACF Livre'),
-        centerTitle: true,
-        backgroundColor: ColorsApp.primaryColor,
+      appBar: const CustomAppBar(
+        title: 'Biblia Sagrada ACF Livre',
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
