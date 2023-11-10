@@ -1,5 +1,5 @@
 class Api {
-  static String urlApi = 'http://10.0.0.24:8080/';
+  static String urlApi = 'https://wired-wind-production.up.railway.app/';
 }
 class RoutesApi{
   

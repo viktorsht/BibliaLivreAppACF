@@ -10,6 +10,7 @@ class BookRepository{
   Future<List<BookModel>> fetchData(String url, Map<String, String> headers) async{
     final response = await service.get(url, headers);
     final jsonList = jsonDecode(response.body) as List;
+    print(jsonList);
     return jsonList.map((json) => BookModel.fromJson(json)).toList();
   }
 }

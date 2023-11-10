@@ -28,7 +28,7 @@ class _BooksPageState extends State<BooksPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Biblia Sagrada AFC Livre'),
+        title: const Text('Biblia Sagrada ACF Livre'),
         centerTitle: true,
         backgroundColor: ColorsApp.primaryColor,
       ),
