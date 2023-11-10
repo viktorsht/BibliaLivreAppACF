@@ -4,6 +4,8 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:holy_bible/app/constants/colors_app.dart';
 import 'package:holy_bible/app/modules/books/bloc/bloc_books.dart';
 
+import '../../../components/widgets/erro_component.dart';
+import '../../../components/widgets/loading_component.dart';
 import 'components/list_books.dart';
 
 class BooksPage extends StatefulWidget {
@@ -39,7 +41,7 @@ class _BooksPageState extends State<BooksPage> {
             bloc: blocBooks,
             builder: (context, state) {
               if(state is SearchBooksErrorState){
-                return Center(child: Text(state.message),);
+                return ErroComponent(errorMessage: state.message);
               }
               else if(state is SearchBooksSucessState){
                 return Expanded(
@@ -49,7 +51,7 @@ class _BooksPageState extends State<BooksPage> {
                 );
               }
               //print(state);
-              return const Center(child: CircularProgressIndicator(),);
+              return const LoadinComponent();
               //return Container();
             },
           ),

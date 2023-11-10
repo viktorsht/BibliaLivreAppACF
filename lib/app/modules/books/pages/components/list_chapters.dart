@@ -4,7 +4,7 @@ import 'package:holy_bible/app/constants/colors_app.dart';
 import 'package:holy_bible/app/models/books_model.dart';
 import 'package:holy_bible/app/routes/routes_app.dart';
 
-import '../../../../components/app_bar_component.dart';
+import '../../../../components/widgets/app_bar_component.dart';
 
 class ListChapters extends StatelessWidget {
   final BookModel book;

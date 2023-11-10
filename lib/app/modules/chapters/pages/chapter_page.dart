@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:holy_bible/app/components/widgets/erro_component.dart';
 import 'package:holy_bible/app/modules/chapters/pages/components/show_verse.dart';
 import 'package:holy_bible/app/routes/routes_app.dart';
 
-import '../../../components/app_bar_component.dart';
+import '../../../components/widgets/app_bar_component.dart';
+import '../../../components/widgets/loading_component.dart';
 import '../bloc/bloc_chapter.dart';
 
 class ChapterPage extends StatefulWidget {
@@ -36,7 +38,7 @@ class _ChapterPageState extends State<ChapterPage> {
         bloc: blocChapter,
         builder: (context, state){
           if(state is ShowChapterErrorState){
-            return Center(child: Text(state.message));
+            return ErroComponent(errorMessage: state.message);
           }
           else if(state is ShowChapterSucessState){
             return Padding(
@@ -52,7 +54,7 @@ class _ChapterPageState extends State<ChapterPage> {
               ),
             );
           }
-          return const Center(child: CircularProgressIndicator(),);
+          return const LoadinComponent();
         }
       ),
     );
