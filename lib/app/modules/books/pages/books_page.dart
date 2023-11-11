@@ -6,6 +6,7 @@ import 'package:holy_bible/app/modules/books/bloc/bloc_books.dart';
 
 import '../../../components/widgets/erro_component.dart';
 import '../../../components/widgets/loading_component.dart';
+import '../../search_books/widgets/search_books_widgets.dart';
 import 'components/list_books.dart';
 
 class BooksPage extends StatefulWidget {
@@ -35,6 +36,7 @@ class _BooksPageState extends State<BooksPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          //SearchBooksWidget(),
           BlocBuilder<BlocBooks, BlocState>(
             bloc: blocBooks,
             builder: (context, state) {
@@ -42,10 +44,13 @@ class _BooksPageState extends State<BooksPage> {
                 return ErroComponent(errorMessage: state.message);
               }
               else if(state is SearchBooksSucessState){
-                return Expanded(
-                  child: ListBooks(
-                    list: state.data,
-                  )
+                return Column(
+                  children: [
+                    SearchBooksWidget(list: state.data),
+                    Expanded(
+                      child: ListBooks(list: state.data),
+                    ),
+                  ],
                 );
               }
               return const LoadinComponent();
