@@ -30,10 +30,11 @@ class WidgetFormField extends StatelessWidget {
         keyboardType: keyboardType,
         onChanged: onChanged,
         validator: validator,
-        style: const TextStyle(fontSize: 18),
+        style: const TextStyle(fontSize: 16),
         decoration: InputDecoration(
           filled: true,
           fillColor: ColorsApp.lightColorText,
+          contentPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
           hintText: hint,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15),
@@ -42,6 +43,5 @@ class WidgetFormField extends StatelessWidget {
           suffixIcon: suffix,
         ),
       );
-    //);
   }
 }

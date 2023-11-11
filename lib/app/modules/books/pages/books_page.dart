@@ -28,35 +28,28 @@ class _BooksPageState extends State<BooksPage> {
   
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: const CustomAppBar(
         title: 'Biblia Sagrada ACF Livre',
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          //SearchBooksWidget(),
-          BlocBuilder<BlocBooks, BlocState>(
-            bloc: blocBooks,
-            builder: (context, state) {
-              if(state is SearchBooksErrorState){
-                return ErroComponent(errorMessage: state.message);
-              }
-              else if(state is SearchBooksSucessState){
-                return Column(
-                  children: [
-                    SearchBooksWidget(list: state.data),
-                    Expanded(
-                      child: ListBooks(list: state.data),
-                    ),
-                  ],
-                );
-              }
-              return const LoadinComponent();
-            },
-          ),
-        ],
+      body: BlocBuilder<BlocBooks, BlocState>(
+        bloc: blocBooks,
+        builder: (context, state) {
+          if(state is SearchBooksErrorState){
+            return ErroComponent(errorMessage: state.message);
+          }
+          else if(state is SearchBooksSucessState){
+            return Column(
+              children: [
+                SearchBooksWidget(list: state.data),
+                Expanded(
+                  child: ListBooks(list: state.data),
+                ),
+              ],
+            );
+          }
+          return const LoadinComponent();
+        },
       ),
     );
   }

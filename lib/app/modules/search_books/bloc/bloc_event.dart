@@ -7,5 +7,6 @@ class SearchBookEvent extends BlocEvent{
   final String nameBook;
   final List<BookModel> list;
 
-  SearchBookEvent(this.nameBook, this.list);
+  SearchBookEvent({required this.nameBook, required this.list});
+
 }
