@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../settings/cubit/increase_font_size_cubit.dart';
 
 class ShowVerse extends StatelessWidget {
   final String numVerse;
@@ -23,14 +26,18 @@ class ShowVerse extends StatelessWidget {
             ),
           ),
         ),
-        Expanded(
-          child: Text(
-            text,
-            style: const TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.normal,
-            ),
-          ),
+        BlocBuilder<IncreaseFontSizeCubit, double>(
+          builder: (context, state) {
+            return Expanded(
+              child: Text(
+                text,
+                style: TextStyle(
+                  fontSize: state,
+                  fontWeight: FontWeight.normal,
+                ),
+              ),
+            );
+          }
         ),
       ],
     );
