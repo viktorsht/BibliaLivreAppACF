@@ -13,31 +13,6 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
-  /*@override
-  void initState() {
-    super.initState();
-
-    checkInternetConnectivity().then((isConnected) {
-      if (isConnected) {
-        Future.delayed(
-          const Duration(milliseconds: 2500),
-          () {
-            Modular.to.navigate(RoutesApp.listBooks);
-          },
-        );
-      } else {
-        Modular.to.navigate(RoutesApp.noInternet);
-        // Trate o caso de não haver conectividade com a internet aqui
-        // Por exemplo, exibindo uma mensagem de erro ou redirecionando para uma tela de erro.
-      }
-    });
-  }
-
-  Future<bool> checkInternetConnectivity() async {
-    final connectivityResult = await (Connectivity().checkConnectivity());   
-    return connectivityResult != ConnectivityResult.none;
-  }*/
-
   @override
   void initState() {
     super.initState();
