@@ -1,11 +1,11 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:holy_bible/app/components/no_internet.dart';
 import 'package:holy_bible/app/external/clients/http/client_http.dart';
 import 'package:holy_bible/app/modules/about/about_module.dart';
 import 'package:holy_bible/app/modules/books/pages/books_page.dart';
 import 'package:holy_bible/app/modules/books/pages/components/list_chapters.dart';
 import 'package:holy_bible/app/modules/books/repositories/book_repository.dart';
 import 'package:holy_bible/app/modules/home/pages/home_page.dart';
+import 'package:holy_bible/app/modules/settings/pages/settings_page.dart';
 import 'package:holy_bible/app/modules/splash/splash_page.dart';
 import 'package:holy_bible/app/routes/routes_app.dart';
 import 'package:http/http.dart';
@@ -30,7 +30,7 @@ class AppModule extends Module {
     r.child(RoutesApp.home, child: (context) => const HomePage());
     r.child(RoutesApp.listBooks, child: (context) => const BooksPage());
     r.child(RoutesApp.listChapters, child: (context) => ListChapters(book: r.args.data));
-    r.child(RoutesApp.noInternet, child: (context) => const NoInternetPage());
+    r.child(RoutesApp.settings, child: (context) => const SettingsPage());
     r.module(RoutesApp.showChapters, module: ChaptersModule());
     r.module(RoutesApp.about, module: AboutModule());
   }

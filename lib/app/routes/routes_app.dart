@@ -6,4 +6,5 @@ class RoutesApp {
   static const String noInternet = '/noInternet/';
   static const String about = '/about/';
   static const String home = '/home/';
+  static const String settings = '/settings/';
 }
