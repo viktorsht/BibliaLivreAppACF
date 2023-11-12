@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:holy_bible/app/modules/about/repositories/about_repository.dart';
 import 'package:holy_bible/app/modules/books/bloc/bloc_books.dart';
 import 'package:holy_bible/app/modules/books/repositories/book_repository.dart';
 import 'package:holy_bible/app/modules/chapters/bloc/bloc_chapter.dart';
@@ -11,6 +12,7 @@ import 'package:provider/provider.dart';
 
 import 'app/app_module.dart';
 import 'app/app_widget.dart';
+import 'app/modules/about/bloc/bloc_about.dart';
 
 void main() {
   initializeDateFormatting().then(
@@ -19,6 +21,7 @@ void main() {
         providers: [
           BlocProvider<BlocBooks>(create: (context) => BlocBooks(Modular.get<BookRepository>())),
           BlocProvider<BlocChapter>(create: (context) => BlocChapter(Modular.get<ChapterRepository>())),
+          BlocProvider<BlocAbout>(create: (context) => BlocAbout(Modular.get<AboutRepository>())),
           BlocProvider<BlocSearchBook>(create: (context) => BlocSearchBook()),
         ],
         child: ModularApp(

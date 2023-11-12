@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:holy_bible/app/components/widgets/app_bar_component.dart';
 import 'package:holy_bible/app/modules/books/bloc/bloc_books.dart';
 
 import '../../../components/widgets/erro_component.dart';
@@ -29,9 +28,6 @@ class _BooksPageState extends State<BooksPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(
-        title: 'Biblia Sagrada ACF Livre',
-      ),
       body: BlocBuilder<BlocBooks, BlocState>(
         bloc: blocBooks,
         builder: (context, state) {

@@ -44,7 +44,7 @@ class _SplashPageState extends State<SplashPage> {
     Future.delayed(
       const Duration(milliseconds: 2500),
       () {
-        Modular.to.navigate(RoutesApp.listBooks);
+        Modular.to.navigate(RoutesApp.home); // vai ser home
       },
     );
   }
