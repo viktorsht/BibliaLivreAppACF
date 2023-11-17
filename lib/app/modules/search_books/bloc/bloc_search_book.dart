@@ -11,6 +11,7 @@ class BlocSearchBook extends Bloc<BlocEvent, BlocState> {
   
   BlocSearchBook() : super(SearchBookInitial()) {
     on<SearchBookEvent> (_mapEventToState);
+    on<SearchBookInitialEvent> (_initialState);
   }
 
   void _mapEventToState(SearchBookEvent event, Emitter<BlocState> emit) async {
@@ -27,6 +28,10 @@ class BlocSearchBook extends Bloc<BlocEvent, BlocState> {
     catch(e){
       emit(SearchBookErrorState(message: e.toString()));
     }
+  }
+
+  void _initialState(SearchBookInitialEvent event, Emitter<BlocState> emit){
+    emit(SearchBookInitial());
   }
 
   BookModel? searchInList(String searchTerm, List<BookModel> list) {

@@ -56,12 +56,11 @@ class SearchBooksWidget extends StatelessWidget {
                     children: [
                       const Align(alignment: Alignment.centerLeft,child: Padding(
                         padding: EdgeInsets.all(3.0),
-                        child: Text('Livro Encontrado', style: TextStyle(
-                          fontSize: 16,
-                        ),),
+                        child: Text('Livro Encontrado', style: TextStyle(fontSize: 16),),
                       )),
                       GestureDetector(
                         onTap: () {
+                          blocSearchBook.add(SearchBookInitialEvent());
                           if(state.data.chapters! > 1){
                             Modular.to.pushNamed(RoutesApp.listChapters, arguments: state.data);
                           }

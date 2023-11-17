@@ -10,3 +10,5 @@ class SearchBookEvent extends BlocEvent{
   SearchBookEvent({required this.nameBook, required this.list});
 
 }
+
+class SearchBookInitialEvent extends BlocEvent{}
