@@ -1,3 +1,7 @@
+import 'dart:io';
+
+import 'package:http/http.dart';
+
 abstract class IHolyBibleException{
   final String message;
   final StackTrace? stackTrace;
@@ -7,4 +11,12 @@ abstract class IHolyBibleException{
 
 class ErrorListBooks extends IHolyBibleException{
   ErrorListBooks(super.stackTrace, {required super.message}); 
+}
+
+class ClientExceptionHolyBible extends ClientException{
+  ClientExceptionHolyBible(super.message);
+}
+
+class SocketExceptionHolyBible extends SocketException{
+  SocketExceptionHolyBible(super.message);
 }

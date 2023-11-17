@@ -1,9 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:holy_bible/app/exceptions/routing_exception.dart';
 import 'package:holy_bible/app/external/api/headers.dart';
 import 'package:holy_bible/app/external/api/routes.dart';
 import 'package:holy_bible/app/modules/books/repositories/book_repository.dart';
-
 import '../../../models/books_model.dart';
 
 
@@ -22,6 +22,12 @@ class BlocBooks extends Bloc<BlocEvent, BlocState> {
     try{
       final response = await bookRepository.fetchData(RoutesApi.books,HeadersApi.getHeaders());
       emit(SearchBooksSucessState(data: response));
+    }
+    on ClientExceptionHolyBible{
+      emit(SearchBooksErrorState(message: 'Verifique sua conexão e tente novamente.'));
+    }
+    on SocketExceptionHolyBible{
+      emit(SearchBooksErrorState(message: 'Verifique sua conexão e tente novamente.'));
     }
     catch(e){
       emit(SearchBooksErrorState(message: e.toString()));

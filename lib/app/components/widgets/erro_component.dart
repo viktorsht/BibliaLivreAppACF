@@ -17,7 +17,7 @@ class ErroComponent extends StatelessWidget {
           ),
           const SizedBox(height: 10.0),
           const Text(
-            'Error Occurred!',
+            'Opss! Algo deu errado',
             style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 10.0),
