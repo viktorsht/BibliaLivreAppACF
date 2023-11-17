@@ -38,15 +38,15 @@ class _IncreaseFontSizeComponentState extends State<IncreaseFontSizeComponent> {
     return Row(
       children: [
         IconButton(
-          onPressed: cubit.increment, 
-          icon: const Icon(Icons.add)
+          onPressed: cubit.decrement, 
+          icon: const Icon(Icons.remove)
         ),
         Expanded(
           child: BlocBuilder<IncreaseFontSizeCubit, double>(
             builder: (context, fontSize){
               return Column(
                 children: [
-                  Text('Tamanho da font: ${fontSize.toInt()}'),
+                  Text('Tamanho da fonte: ${fontSize.toInt()}'),
                   Slider(
                     thumbColor: ColorsApp.primaryColor,
                     activeColor: ColorsApp.primaryColor,
@@ -63,8 +63,8 @@ class _IncreaseFontSizeComponentState extends State<IncreaseFontSizeComponent> {
           ),
         ),
         IconButton(
-          onPressed: cubit.decrement, 
-          icon: const Icon(Icons.remove)
+          onPressed: cubit.increment, 
+          icon: const Icon(Icons.add)
         ),
       ],
     );
