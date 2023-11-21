@@ -19,13 +19,14 @@
 
 Projeto Open Source da Bíblia. Tornando a Bíblia cada dia mais acessível a todos os brasileiros.
 
-
 <p align="center">
   <img src="./assets/screenshots/screenshots_books.jpeg" alt="Books Screenshot" width="30%">
   <img src="./assets/screenshots/screenshots_chapters.jpeg" alt="Chapters Screenshot" width="30%">
   <img src="./assets/screenshots/screenshots_verses.jpeg" alt="Verses Screenshot" width="30%">
 </p>
 
-
-
-<p align = "center"> Em breve disponível na Google Play!!</p>
+<h1>
+<p>
+<a href="https://play.google.com/store/apps/details?id=com.holy_bible_acf_online_free.holy_bible">Google Play</a>
+</p>
+</h1>
