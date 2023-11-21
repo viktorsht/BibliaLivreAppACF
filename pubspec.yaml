@@ -2,7 +2,7 @@ name: holy_bible
 description: A new Flutter project.
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-version: 1.0.3+2
+version: 1.0.4+2
 
 environment:
   sdk: '>=3.1.0 <4.0.0'
@@ -24,14 +24,16 @@ dependencies:
 
 flutter_native_splash:
   color: "#2b2b46"
-  image_path: "assets/images/icon_app.png"
+  image: assets/images/logo-sem-fundo.png
+  color_dark: "#2b2b46"
+  image_dark: assets/images/logo-sem-fundo.png
   android: true
 
 flutter_icons:
-  image_path: "assets/images/icon_app.png"
+  image_path: "assets/images/logo_white.png"
   android: "launcher_icon"
   apaptive_icon_background: "#2b2b46"
-  apaptive_icon_foreground: "assets/images/icon_app.png"
+  apaptive_icon_foreground: "assets/images/logo_white.png"
 
 dev_dependencies:
   flutter_test:
