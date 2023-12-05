@@ -29,7 +29,7 @@ class ShowVerse extends StatelessWidget {
         BlocBuilder<IncreaseFontSizeCubit, double>(
           builder: (context, state) {
             return Expanded(
-              child: Text(
+              child: SelectableText(
                 text,
                 style: TextStyle(
                   fontSize: state,
