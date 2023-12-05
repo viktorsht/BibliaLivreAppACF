@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:holy_bible/app/components/widgets/app_bar_component.dart';
-import 'package:holy_bible/app/constants/buttons.dart';
 import 'package:holy_bible/app/constants/colors_app.dart';
 import 'package:holy_bible/app/constants/constants.dart';
-//import 'package:provider/provider.dart';
 
 import '../../../constants/images.dart';
 import '../cubit/contribute_cubit.dart';
@@ -17,7 +15,6 @@ class ContributePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    //ClipboardCubit cubit = Provider.of<ClipboardCubit>(context); 
     double screen = MediaQuery.of(context).size.width * 0.6;
     return Scaffold(
       appBar: const CustomAppBar(title: 'Apoie'),
@@ -27,7 +24,6 @@ class ContributePage extends StatelessWidget {
           child: BlocBuilder<ClipboardCubit, ClipboardState>(
             builder: (context, state) {
               return Column(
-                //crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
@@ -43,10 +39,6 @@ class ContributePage extends StatelessWidget {
                     height: screen,
                     child: Image.asset(Images.charity)
                   ),
-                  /*Text(
-                    Constants.keyPix,
-                  style: const TextStyle(fontSize: 18),
-                ),*/
                 const SizedBox(height: 20),
                 GestureDetector(
                   onTap: () {
