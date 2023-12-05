@@ -49,6 +49,11 @@ class DrawerPage extends StatelessWidget {
             onTap: () => Modular.to.pushNamed(RoutesApp.settings),
           ),
           ListTile(
+            leading: const Icon(Icons.favorite),
+            title: const Text('Apoie'),
+            onTap: () => Modular.to.pushNamed(RoutesApp.contribute),
+          ),
+          ListTile(
             leading: const Icon(Icons.info_outline),
             title: const Text('Sobre'),
             onTap: () => Modular.to.pushNamed(RoutesApp.about),

@@ -10,6 +10,7 @@ class AppWidget extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Biblia Livre',
       routerConfig: Modular.routerConfig,
+      theme: ThemeData(useMaterial3: true),
     ); //added by extension 
   }
 }

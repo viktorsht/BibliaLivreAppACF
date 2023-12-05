@@ -4,6 +4,7 @@ import 'package:holy_bible/app/modules/about/about_module.dart';
 import 'package:holy_bible/app/modules/books/pages/books_page.dart';
 import 'package:holy_bible/app/modules/books/pages/components/list_chapters.dart';
 import 'package:holy_bible/app/modules/books/repositories/book_repository.dart';
+import 'package:holy_bible/app/modules/contribute/pages/contribute_page.dart';
 import 'package:holy_bible/app/modules/home/pages/home_page.dart';
 import 'package:holy_bible/app/modules/settings/pages/settings_page.dart';
 import 'package:holy_bible/app/modules/splash/splash_page.dart';
@@ -31,6 +32,7 @@ class AppModule extends Module {
     r.child(RoutesApp.listBooks, child: (context) => const BooksPage());
     r.child(RoutesApp.listChapters, child: (context) => ListChapters(book: r.args.data));
     r.child(RoutesApp.settings, child: (context) => const SettingsPage());
+    r.child(RoutesApp.contribute, child: (context) => const ContributePage());
     r.module(RoutesApp.showChapters, module: ChaptersModule());
     r.module(RoutesApp.about, module: AboutModule());
   }

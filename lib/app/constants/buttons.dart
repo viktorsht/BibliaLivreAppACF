@@ -5,11 +5,12 @@ import 'colors_app.dart';
 class CustomElevatedButtonStyle {
   static ButtonStyle primaryButtonStyle = ElevatedButton.styleFrom(
     //maximumSize: const Size(0.7 * double.infinity, 0),
-    //foregroundColor: ColorsApp.darkColorText, // Cor de fundo quando pressionado
-    backgroundColor: ColorsApp.secundaryColor, // Cor do texto
+    foregroundColor: ColorsApp.secundaryColor, // Cor de fundo quando pressionado
+    backgroundColor: ColorsApp.primaryColor, // Cor do texto
+    textStyle: TextStyle(color: ColorsApp.secundaryColor),
     padding: const EdgeInsets.all(16), // Preenchimento interno
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(8.0), // Borda arredondada
+      borderRadius: BorderRadius.circular(20.0), // Borda arredondada
     ),
   );
 
