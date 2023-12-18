@@ -13,24 +13,6 @@ class IncreaseFontSizeComponent extends StatefulWidget {
 }
 
 class _IncreaseFontSizeComponentState extends State<IncreaseFontSizeComponent> {
-  double _value = 1.0;
-
-  void increment(){
-    if(_value < 100){
-      setState(() {
-        _value+=2;
-      });
-    }
-  }
-
-  void decrement(){
-    if(_value > 1){
-      setState(() {
-        _value-=2;
-      });
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     IncreaseFontSizeCubit cubit = Provider.of<IncreaseFontSizeCubit>(context);
