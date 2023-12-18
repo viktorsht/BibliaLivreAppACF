@@ -20,34 +20,31 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         title,
         style: TextStyle(
           fontSize: 22,
-          color: Theme.of(context).colorScheme.onSecondary,
+          color: Theme.of(context).brightness == Brightness.dark 
+            ? Theme.of(context).colorScheme.onSecondary 
+            : Theme.of(context).colorScheme.onPrimary,
           fontWeight: FontWeight.w500
         ),
       ),
       backgroundColor: ColorsApp.primaryColor,
       centerTitle: true,
       leading: onBackPressed != null
-          ? IconButton(
-              onPressed: onBackPressed, // Chame a função de navegação
-              icon: Icon(
-                Icons.arrow_back,
-                color: Theme.of(context).colorScheme.onPrimary,
-              ),
-            )
-          : null,
-      actions: onSettingsPressed != null
-          ? [
-              IconButton(
-                onPressed: onSettingsPressed,
-                icon: Icon(
-                  Icons.search,
-                  color: Theme.of(context).colorScheme.onPrimary,
-                ),
-              ),
-            ]
-          : null,
+      ? IconButton(
+          onPressed: onBackPressed, // Chame a função de navegação
+          icon: Icon(
+            Icons.arrow_back,
+            color: Theme.of(context).brightness == Brightness.dark 
+              ? Theme.of(context).colorScheme.onSecondary 
+              : Theme.of(context).colorScheme.onPrimary,
+          ),
+        )
+      : null,
       elevation: 1,
-      iconTheme: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
+      iconTheme: IconThemeData(
+        color: Theme.of(context).brightness == Brightness.dark 
+          ? Theme.of(context).colorScheme.onSecondary 
+          : Theme.of(context).colorScheme.onPrimary,
+      ),
     );
   }
 

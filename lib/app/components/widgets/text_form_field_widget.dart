@@ -29,11 +29,16 @@ class WidgetFormField extends StatelessWidget {
         keyboardType: keyboardType,
         onChanged: onChanged,
         validator: validator,
-        style: TextStyle(fontSize: 16, color: Theme.of(context).colorScheme.onPrimary),
+        style: TextStyle(
+          fontSize: 16, 
+          color: Theme.of(context).brightness == Brightness.dark 
+            ? Theme.of(context).colorScheme.onSecondary 
+            : Theme.of(context).colorScheme.onPrimary,
+        ),
         decoration: InputDecoration(
           filled: true,
           fillColor: Theme.of(context).brightness == Brightness.dark 
-            ? Theme.of(context).colorScheme.onSecondary 
+            ? Theme.of(context).colorScheme.onPrimary 
             : Theme.of(context).colorScheme.onPrimary,
           contentPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
           hintText: hint,

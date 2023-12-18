@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:holy_bible/app/constants/colors_app.dart';
 import 'package:holy_bible/app/modules/settings/cubit/increase_font_size_cubit.dart';
 import 'package:provider/provider.dart';
 
@@ -48,8 +47,10 @@ class _IncreaseFontSizeComponentState extends State<IncreaseFontSizeComponent> {
                 children: [
                   Text('Tamanho da fonte: ${fontSize.toInt()}'),
                   Slider(
-                    thumbColor: ColorsApp.primaryColor,
-                    activeColor: ColorsApp.primaryColor,
+                    thumbColor: Theme.of(context).brightness == Brightness.dark 
+                      ? Theme.of(context).colorScheme.secondary 
+                      : Theme.of(context).colorScheme.primary,
+                    activeColor: Theme.of(context).colorScheme.background ,
                     value: fontSize,
                     max: Constants.fontSizeMax,
                     min: Constants.fontSizeMin,
