@@ -19,7 +19,9 @@ class NameBookComponent extends StatelessWidget {
               abbrev,
               style: TextStyle(
                 fontSize: 16,
-                color: ColorsApp.lightColorText,
+                color: Theme.of(context).brightness == Brightness.dark 
+                  ? Theme.of(context).colorScheme.onSecondary 
+                  : Theme.of(context).colorScheme.onPrimary // ColorsApp.lightColorText,
               ), 
             ),
           ),
@@ -29,7 +31,7 @@ class NameBookComponent extends StatelessWidget {
           name,
           style: TextStyle(
             fontSize: 18,
-            color: ColorsApp.darkColorText,
+            color: Theme.of(context).colorScheme.onSecondary,//ColorsApp.darkColorText,
           ),
         ),
       ],

@@ -14,6 +14,7 @@ import 'package:provider/provider.dart';
 import 'app/app_module.dart';
 import 'app/app_widget.dart';
 import 'app/modules/about/bloc/bloc_about.dart';
+import 'app/modules/settings/cubit/theme_mode_cubit.dart';
 
 void main() {
   initializeDateFormatting().then(
@@ -25,6 +26,7 @@ void main() {
           BlocProvider<BlocAbout>(create: (context) => BlocAbout(Modular.get<AboutRepository>())),
           BlocProvider<BlocSearchBook>(create: (context) => BlocSearchBook()),
           BlocProvider<IncreaseFontSizeCubit>(create: (context) => IncreaseFontSizeCubit()),
+          BlocProvider<ThemeModeCubit>(create: (context) => ThemeModeCubit()),
         ],
         child: ModularApp(
           module: AppModule(), 

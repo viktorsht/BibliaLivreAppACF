@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:holy_bible/app/models/books_model.dart';
 
-import '../constants/colors_app.dart';
 import 'name_book_component.dart';
 
 class ShowBook extends StatelessWidget {
@@ -14,7 +13,7 @@ class ShowBook extends StatelessWidget {
       height: 55, // Altura do container
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12.0), // Borda arredondada
-        color: ColorsApp.buttonColor, // Cor cinza claro
+        color: Theme.of(context).colorScheme.background //ColorsApp.buttonColor, // Cor cinza claro
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -26,7 +25,7 @@ class ShowBook extends StatelessWidget {
               bookModel.chapters! > 1 ? '${bookModel.chapters} Capítulos' : '${bookModel.chapters} Capítulo',
               style: TextStyle(
                 fontSize: 18,
-                color: ColorsApp.darkColorText,
+                color: Theme.of(context).colorScheme.onSecondary //ColorsApp.darkColorText,
               ),
             ),
           ),

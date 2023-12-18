@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:holy_bible/app/constants/colors_app.dart';
 
 class LoadinComponent extends StatelessWidget {
   const LoadinComponent({super.key});
@@ -8,7 +7,9 @@ class LoadinComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: CircularProgressIndicator(
-        color: ColorsApp.primaryColor,
+        color: Theme.of(context).brightness == Brightness.dark 
+        ? Theme.of(context).colorScheme.secondary 
+        : Theme.of(context).colorScheme.primary
       ),
     );
   }

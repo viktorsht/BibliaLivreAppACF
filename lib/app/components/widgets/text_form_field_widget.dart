@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:holy_bible/app/constants/colors_app.dart';
 
 class WidgetFormField extends StatelessWidget {
   final String hint;
@@ -30,10 +29,12 @@ class WidgetFormField extends StatelessWidget {
         keyboardType: keyboardType,
         onChanged: onChanged,
         validator: validator,
-        style: const TextStyle(fontSize: 16),
+        style: TextStyle(fontSize: 16, color: Theme.of(context).colorScheme.onPrimary),
         decoration: InputDecoration(
           filled: true,
-          fillColor: ColorsApp.lightColorText,
+          fillColor: Theme.of(context).brightness == Brightness.dark 
+            ? Theme.of(context).colorScheme.onSecondary 
+            : Theme.of(context).colorScheme.onPrimary,
           contentPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
           hintText: hint,
           border: OutlineInputBorder(

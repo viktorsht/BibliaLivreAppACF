@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:http/http.dart';
 
 abstract class IHolyBibleException{
@@ -15,6 +14,10 @@ class ErrorListBooks extends IHolyBibleException{
 
 class ClientExceptionHolyBible extends ClientException{
   ClientExceptionHolyBible(super.message);
+}
+
+class PutAppException extends FormatException{
+  PutAppException(super.message);
 }
 
 class SocketExceptionHolyBible extends SocketException{

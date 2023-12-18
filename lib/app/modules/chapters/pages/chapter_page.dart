@@ -85,9 +85,12 @@ class _ChapterPageState extends State<ChapterPage> {
                     child: ListView.builder(
                       itemCount: state.data.verse!.length,
                       itemBuilder: (context, index){
-                        return ShowVerse(
-                          numVerse: state.data.verse![index].verse!.toString(),
-                          text: state.data.verse![index].text!
+                        return Padding(
+                          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+                          child: ShowVerse(
+                            numVerse: state.data.verse![index].verse!.toString(),
+                            text: state.data.verse![index].text!
+                          ),
                         );
                       }
                     ),

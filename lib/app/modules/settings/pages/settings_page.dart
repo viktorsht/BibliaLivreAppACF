@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:holy_bible/app/components/widgets/app_bar_component.dart';
 import 'package:holy_bible/app/modules/settings/pages/components/increase_font_size.dart';
+import 'package:holy_bible/app/modules/settings/pages/components/theme_mode_change.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -31,7 +32,15 @@ class _SettingsPageState extends State<SettingsPage> {
               height: 80,
               width: 300,
               child: IncreaseFontSizeComponent()
-            )
+            ),
+            const Text(
+              'Altere o tema',
+              style: TextStyle(
+                fontSize: 20
+              ),
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.05,),
+            const ThemeModeChange(),
           ],
         ),
       ),

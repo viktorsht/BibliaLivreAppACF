@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:holy_bible/app/constants/colors_app.dart';
 import 'package:holy_bible/app/models/books_model.dart';
 import 'package:holy_bible/app/routes/routes_app.dart';
 
@@ -38,13 +37,13 @@ class ListChapters extends StatelessWidget {
                 height: 80,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8.0), // Define o raio de borda arredondada
-                  color: ColorsApp.buttonColor
+                  color: Theme.of(context).colorScheme.background
                 ),
                 child: Center(
                   child: Text(
                     "${index+1}",
                     style: TextStyle(
-                      color: ColorsApp.darkColorText,
+                      color: Theme.of(context).colorScheme.onSecondary,//ColorsApp.darkColorText,
                       fontSize: 18,
                       fontWeight: FontWeight.w500
                     ),

@@ -29,6 +29,9 @@ class BlocBooks extends Bloc<BlocEvent, BlocState> {
     on SocketExceptionHolyBible{
       emit(SearchBooksErrorState(message: 'Verifique sua conexão e tente novamente.'));
     }
+    on PutAppException{
+      emit(SearchBooksErrorState(message: 'Atualize o aplicativo para a nova versão'));
+    }
     catch(e){
       emit(SearchBooksErrorState(message: e.toString()));
     }

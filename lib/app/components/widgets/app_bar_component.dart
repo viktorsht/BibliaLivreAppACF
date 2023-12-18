@@ -20,7 +20,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         title,
         style: TextStyle(
           fontSize: 22,
-          color: ColorsApp.lightColorText,
+          color: Theme.of(context).colorScheme.onSecondary,
           fontWeight: FontWeight.w500
         ),
       ),
@@ -31,7 +31,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               onPressed: onBackPressed, // Chame a função de navegação
               icon: Icon(
                 Icons.arrow_back,
-                color: ColorsApp.lightColorText,
+                color: Theme.of(context).colorScheme.onPrimary,
               ),
             )
           : null,
@@ -41,13 +41,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 onPressed: onSettingsPressed,
                 icon: Icon(
                   Icons.search,
-                  color: ColorsApp.lightColorText,
+                  color: Theme.of(context).colorScheme.onPrimary,
                 ),
               ),
             ]
           : null,
       elevation: 1,
-      iconTheme: IconThemeData(color: ColorsApp.lightColorText),
+      iconTheme: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
     );
   }
 

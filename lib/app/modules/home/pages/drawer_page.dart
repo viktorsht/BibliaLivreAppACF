@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:holy_bible/app/constants/colors_app.dart';
 import 'package:holy_bible/app/constants/images.dart';
 import 'package:holy_bible/app/routes/routes_app.dart';
 
@@ -10,13 +9,13 @@ class DrawerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: ColorsApp.secundaryColor,
+      backgroundColor: Theme.of(context).colorScheme.background,
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
           DrawerHeader(
             decoration: BoxDecoration(
-              color: ColorsApp.buttonColor,
+              color: Theme.of(context).colorScheme.background,
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -29,14 +28,14 @@ class DrawerPage extends StatelessWidget {
                 Text(
                   'Biblia Sagrada ACF Livre',
                   style: TextStyle(
-                    color: ColorsApp.darkColorText,
+                    color: Theme.of(context).colorScheme.onSecondary,
                     fontSize: 20,
                   ),
                 ),
                 Text(
                   'Bem vindo(a)',
                   style: TextStyle(
-                    color: ColorsApp.darkColorText,
+                    color: Theme.of(context).colorScheme.onSecondary,
                     fontSize: 16,
                   ),
                 ),

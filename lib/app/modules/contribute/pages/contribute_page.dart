@@ -64,7 +64,7 @@ class ContributePage extends StatelessWidget {
                       children: [
                         Text('Quero doar', style: TextStyle(fontSize: 18, color: ColorsApp.secundaryColor),),
                         const SizedBox(width: 8,),
-                        Icon(Icons.pix, color: ColorsApp.lightColorText,),
+                        Icon(Icons.pix, color: Theme.of(context).colorScheme.onPrimary,),
                         ],
                       ),
                     ),
