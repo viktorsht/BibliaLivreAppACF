@@ -44,11 +44,7 @@ void main() async {
 
 Future<void> loadPreferences() async {
   final appPreferences = AppPreferences();
-
-  // Carregue o tamanho da fonte e o tema
   double fontSize = await appPreferences.getFontSize();
   ThemeMode themeMode = await appPreferences.getThemeMode();
-
-  // Configurar as preferências no widget global
   AppWidget.setAppPreferences(fontSize, themeMode);
 }
