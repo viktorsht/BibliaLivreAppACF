@@ -2,7 +2,7 @@ name: holy_bible
 description: A new Flutter project.
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-version: 1.2.7+6
+version: 1.3.8+7
 
 environment:
   sdk: '>=3.1.0 <4.0.0'
@@ -22,6 +22,7 @@ dependencies:
   flutter_native_splash: ^2.3.5
   flutter_launcher_icons: ^0.13.1
   fluttertoast: ^8.2.4
+  shared_preferences: ^2.2.2
 
 flutter_native_splash:
   color: "#2b2b46"
