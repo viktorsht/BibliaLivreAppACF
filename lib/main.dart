@@ -15,8 +15,13 @@ import 'app/app_module.dart';
 import 'app/app_widget.dart';
 import 'app/modules/about/bloc/bloc_about.dart';
 import 'app/modules/settings/cubit/theme_mode_cubit.dart';
+import 'app/utils/app_preferences.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await loadPreferences();
+
   initializeDateFormatting().then(
     (_) => runApp(
       MultiProvider(
@@ -35,4 +40,15 @@ void main() {
       ),
     )
   );
+}
+
+Future<void> loadPreferences() async {
+  final appPreferences = AppPreferences();
+
+  // Carregue o tamanho da fonte e o tema
+  double fontSize = await appPreferences.getFontSize();
+  ThemeMode themeMode = await appPreferences.getThemeMode();
+
+  // Configurar as preferências no widget global
+  AppWidget.setAppPreferences(fontSize, themeMode);
 }
