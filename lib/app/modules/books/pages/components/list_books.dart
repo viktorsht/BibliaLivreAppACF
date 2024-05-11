@@ -5,6 +5,7 @@ import 'package:holy_bible/app/models/books_model.dart';
 import 'package:holy_bible/app/routes/routes_app.dart';
 
 class ListBooks extends StatelessWidget {
+  
   final List<BookModel> list;
   const ListBooks({super.key, required this.list});
 

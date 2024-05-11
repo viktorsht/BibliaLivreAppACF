@@ -31,9 +31,7 @@ class WidgetFormField extends StatelessWidget {
         validator: validator,
         style: TextStyle(
           fontSize: 16, 
-          color: Theme.of(context).brightness == Brightness.dark 
-            ? Theme.of(context).colorScheme.onSecondary 
-            : Theme.of(context).colorScheme.onPrimary,
+          color: Theme.of(context).colorScheme.onSecondary,
         ),
         decoration: InputDecoration(
           filled: true,

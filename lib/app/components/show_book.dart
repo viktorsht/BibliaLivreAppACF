@@ -22,7 +22,7 @@ class ShowBook extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              bookModel.chapters! > 1 ? '${bookModel.chapters} Capítulos' : '${bookModel.chapters} Capítulo',
+              bookModel.chapters! > 1 ? '${bookModel.chapters} Cap.' : '${bookModel.chapters} Cap.',
               style: TextStyle(
                 fontSize: 18,
                 color: Theme.of(context).colorScheme.onSecondary //ColorsApp.darkColorText,
