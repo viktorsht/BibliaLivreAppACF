@@ -1,5 +1,7 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 class Api {
-  static String urlApi = 'https://resilient-cats-production.up.railway.app/';
+  static String urlApi = dotenv.env['BASE_URL'] ?? '';
 }
 class RoutesApi{
   

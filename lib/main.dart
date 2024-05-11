@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:holy_bible/app/modules/about/repositories/about_repository.dart';
 import 'package:holy_bible/app/modules/books/bloc/bloc_books.dart';
@@ -19,6 +20,8 @@ import 'app/utils/app_preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await dotenv.load(fileName: "assets/.env");
 
   await loadPreferences();
 
