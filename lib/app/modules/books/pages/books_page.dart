@@ -35,13 +35,16 @@ class _BooksPageState extends State<BooksPage> {
             return ErroComponent(errorMessage: state.message);
           }
           else if(state is SearchBooksSucessState){
-            return Column(
-              children: [
-                SearchBooksWidget(list: state.data),
-                Expanded(
-                  child: ListBooks(list: state.data),
-                ),
-              ],
+            return RefreshIndicator(
+              onRefresh: () async => blocBooks.add(SearchListBooksEvent()),
+              child: Column(
+                children: [
+                  SearchBooksWidget(list: state.data),
+                  Expanded(
+                    child: ListBooks(list: state.data),
+                  ),
+                ],
+              ),
             );
           }
           return const LoadinComponent();
